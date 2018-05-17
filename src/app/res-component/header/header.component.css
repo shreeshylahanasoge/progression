@@ -1,0 +1,50 @@
+.logo {
+	width: 40px;
+    float: left;
+    margin-top: 10px;
+}
+
+.header-title {
+	float: left;
+	color: white;
+	margin-top: 14px;
+}
+
+.header-logout {
+	float: right;
+    margin-right: 40px;
+    margin-top: 20px;
+    color: white;
+}
+
+.header-login {
+	float: right;
+    margin-right: 40px;
+    margin-top: 10px;
+    color: white;
+    padding: 8px 30px;
+    border: 1px solid white;
+    background: none;
+}
+
+.header-login:hover {
+	background: white;
+	color: lightslategrey;
+}
+
+.common-font {
+	font-family: monospace;
+}
+
+#loading {
+		-webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}

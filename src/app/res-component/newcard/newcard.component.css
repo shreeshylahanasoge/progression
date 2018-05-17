@@ -1,0 +1,175 @@
+.newcard {
+	background: #e8e8e8;
+	border: 3px groove #778899;
+    padding: 5px;
+    margin-left: 10px;
+    border-style: dashed;
+}
+
+.header-title {
+	text-align: center;
+	margin-top: 30%;
+}
+
+.add-new {
+	font-size: 70px;
+    color: lightslategrey;	
+    background: none;
+    border: none;
+}
+
+/*Center the div*/
+.outer {
+  display: table;
+  position: absolute;
+  height: 86%;
+  width: 10%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+}
+
+.cards {
+	background: #f7f7f754;
+	border: 3px groove #f8f8f8;
+    padding: 5px;
+    margin-left: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.header-title {
+	text-align: center;
+	color: lightslategrey;
+}
+
+.card-title {
+	color: lightslategrey;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.card-title-container {
+	text-align: center;
+}
+
+.input-container{
+	text-align: center;
+    margin-top: 20%;
+}
+
+.input-style {
+	background: lightslategrey;
+    color: white;
+    width: 80%;
+    padding: 6px;
+    font-weight: bold;
+    font-style: inherit;
+    text-transform: uppercase;
+}
+
+.select-style {
+	background: lightslategrey;
+    color: white;
+    width: 60%;
+    margin-top: 10px;
+}
+
+.res-button {
+	background: #77dd77;
+    width: 40%;
+    height: 30px;
+    color: #3d4f61;
+    border: 1px solid;
+    font-weight: bold;
+}
+
+input textarea {
+  outline: none;
+  /*padding: 12px;*/
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+textarea {
+	height: 110px;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+  color: white;
+  transition: opacity 250ms ease-in-out;
+}
+:focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+  transition: opacity 250ms ease-in-out;
+}
+:focus:-ms-input-placeholder {
+  opacity: 0.5;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+:focus::-moz-placeholder {
+  opacity: 0.5;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: white;
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+:focus:-moz-placeholder {
+  opacity: 0.5;
+}
+
+/*Flip the card styles*/
+.newcard-container {
+	position: relative;
+	perspective: 800px;
+	height: 100%;
+    float: left;
+    width: 100%;
+}
+
+#card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+#card #figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#card .front {
+  /*background: red;*/
+}
+
+#card .back {
+  /*background: blue;*/
+  transform: rotateY( 180deg );
+}
+
+#card.flipped {
+  transform: rotateY( 180deg );
+}

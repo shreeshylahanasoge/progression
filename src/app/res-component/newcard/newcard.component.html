@@ -1,0 +1,82 @@
+<!-- <div class="inactive cards almostfull"> -->
+<div style="position: relative;width: 100%;height: 100%">
+<section class="newcard-container">
+	<div id="card" [className]="flip_class">
+		<div id="figure" class="front">
+			<div [className]="my_class" style="float: left; width: 250px">
+			  	<div class="row custom-row">
+			  		<div class= "col-sm-5 custom-container jumbotron">
+						<div class="card-title-container">
+							<span class="card-title">Enter your new resolution</span>
+						</div>       
+					    <form class="form-horizontal" #newcardForm="ngForm">
+					      <!-- <fieldset> -->
+					        <!-- <legend>New resolution</legend> -->
+					        <div class="form-group input-container">
+						      <!-- <label for="inputTitle">Title</label> -->
+						      <input type="text"
+						        id="inputTitle"
+						        name="title"
+						        placeholder="Title"
+						        class="input-style" 
+						        [(ngModel)] = "subject.title">
+							</div>
+
+							<div class="form-group input-container">
+						      <!-- <label for="inputDescription">Description</label> -->
+						      <textarea type="text"
+						        id="inputDescription"
+						        name="description"
+						        placeholder="Description"
+						        class="input-style"
+						        [(ngModel)] = "subject.description"></textarea>
+							</div>
+
+					            <!--- Gender Block -->
+					        <div class="form-group input-container">
+					          <label for="select" style="width: 100%; color: lightslategrey; font-weight: bold;">Select the type of system</label>
+					           <select id="select" class="select-style" [(ngModel)] = "subject.type" name="type">
+					              
+					             <option *ngFor = "let g of type"
+					               [value] = "g"> {{g}} 
+					             </option>
+					           </select>
+					        </div>
+
+					        <div class="form-group input-container">
+						        <button
+								   type="submit"
+								   class="btn btn-success res-button"
+								   (click)="create_card($event)"
+								   [disabled]="!newcardForm.form.valid"> 
+								     Create
+								</button>
+							</div>
+					      <!-- </fieldset> -->
+					    </form>
+			    <!-- {{subject | json}} -->
+			  		</div>
+				</div>
+			</div>
+		</div>
+		<div id="figure" class="back">
+			<div [className]="my_class" style="float: left; width: 250px">
+			  	<div class="row custom-row">
+			  		<div class= "col-sm-5 custom-container jumbotron">
+						<div class="card-title-container"><span class="card-title">Backside Bruh!</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div [style.left]="leftpos" class="newcard outer almostfull">
+  <div class="middle">
+  	<div class="inner">
+  	  <div class = "header-title">
+        <button class="add-new" (click)="myEvent($event)">+</button>
+      </div>
+	</div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import url('https://fonts.googleapis.com/css?family=Muli:400,700');*/
+ 
+body {
+    background:#e8e8e8;
+    /*font-family: 'Muli';*/
+    /*padding: 10px;*/
+    margin: 0;
+}
+ 
+/*li{
+    padding:5px;
+    cursor: pointer;
+}
+li:hover{
+    background-color: #F6FFDE;
+}*/
+
+.header {
+	/*background: #f7f7f7;*/
+    background: lightslategrey;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-left: 40px;
+    height: 60px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 30px;
+    background: lightslategrey;
+}
+
+.fullheight {
+	height: 100%
+}
+
+.almostfull {
+	height: 85%;
+}
+
+.fullwidth {
+	width: 100%;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.inactive {
+	display: none!important;
+}
+
+.btn-primary {
+    color: lightslategrey;
+}

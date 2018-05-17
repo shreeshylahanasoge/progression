@@ -1,0 +1,51 @@
+<app-header></app-header>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<div class="login-container" style="display: none">
+	<table style="width: 100%">
+		<tr>
+			<td style="width: 33%">
+		 	   	<div class="text-center login-title">
+		        	<h2>Welcome</h2>
+		    	</div>
+				<div class="divider_login_title"></div>
+    		</td>
+    		<td>
+		        <div class="form-container account-wall">
+		            <!-- <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt=""> -->
+		            <form class="form-signin" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+						<input type="text" class="form-control form-elements" placeholder="Email" required autofocus name="user" ngModel>
+						<input type="password" class="form-control form-elements" placeholder="Password" required name="pass" ngModel>
+						<a class="forgot_password">Forgot Password</a>
+						<button class="btn login-btn btn-block" type="submit">Log in</button>
+					</form>
+					<!-- <pre>{{f.value | json}}</pre> -->
+				</div>
+				<!-- <div class="divider_login_form"></div>     -->
+		    	<div class="social-btns">
+		    		<button class="btn fb-btn">Login with Facebook</button>
+		    		<button class="btn google-btn">Login with Google+</button>
+		    		<button class="btn twitter-btn">Login with Twitter</button>
+		    	</div>
+				<!-- <div class="divider_signup_form"></div>     -->
+		    	<div class="signup_container">
+		    		<button class="btn signup_btn">Sign up</button>
+		    	</div>
+    		</td>
+    	</tr>
+    </table>
+	<div class="close_login">X</div>    
+</div>
+<div class="container-fluid" style="max-width:960px;">
+	<div class="public_content">
+		<div class="home_corousal">
+	  		<span class="home_corousal_quote home_corousal_quote_1_1">Formal education will earn you a living</span>
+	  		<span class="home_corousal_quote home_corousal_quote_1_2">Self education will earn you a fortune</span>
+		</div>
+		<div class="progression_features">
+			<div class="features_icon"><span class="features_title">Learn</span></div>
+			<div class="features_icon"><span class="features_title">Analyse</span></div>
+			<div class="features_icon"><span class="features_title">Grow</span></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,177 @@
+.login-container {
+	/*padding: 40px;*/
+	background: #000000d4;
+	/*position: absolute;
+    left: 0;
+    right: 0;*/
+    top: 60px;
+    margin-top: 60px;
+}
+
+.login-title {
+    color: white;
+    display: inline-block;
+    float: left;
+    width: 98%;
+    /*margin-top: 25px;*/
+}
+
+.form-container {
+	display: inline-block;
+	width: 30%;
+    float: left;
+    /*margin-left: 16%;*/
+}
+
+.login-title::after {
+	border-right: 1px solid white;
+}
+
+.divider_login_title {
+	/*border-left: 1px solid #66717b;*/
+    border-right: 1px solid #778899;
+    height: 90px;
+    display: inline-block;
+    /*position: absolute;*/
+    /*left: 27%;*/
+    /*top: 30%; */
+}
+
+.divider_login_form {
+	border-left: 1px solid #66717b;
+    border-right: 1px solid #778899;
+    height: 52px;
+    /*position: absolute;*/
+    left: 59%;
+    top: 37%;	
+}
+
+.divider_signup_form {
+	border-left: 1px solid #66717b;
+    border-right: 1px solid #778899;
+    height: 52px;
+    /*position: absolute;*/
+    left: 82%;
+    top: 37%;	
+}
+
+.login-btn {
+	background: lightslategrey;
+	color: white;
+	width: 100%;
+	margin-top: 20px;
+	/*margin-left: 25%;*/
+}
+
+.forgot_password {
+	color: lightgray;
+    font-size: 10px;
+    display: inline-block;
+    position: absolute;
+    top: 53%;
+    margin-left: 10%;
+    /* left: 42%; */
+    letter-spacing: 2px;
+}
+
+.form-elements {
+	width: 100%;
+	/*margin-left: 25%;*/
+	margin-bottom: 5px;
+}
+
+.home_corousal {
+	margin-top: 25%;
+	text-align: center;
+	color: #444;
+}
+
+.home_corousal_quote_1_1 {
+    font-size: 34px;
+    color: #777;
+}
+
+.home_corousal_quote_1_2 {
+	font-size: 47px;
+	color: #444;
+	margin-top: 16px;
+}
+
+.home_corousal_quote {
+	display: block;
+    letter-spacing: 3px;		
+}
+
+.progression_features {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.features_icon {
+	display: inline-block;
+	height: 80px;
+	width: 80px;
+	margin: 100px 100px 0 100px;
+	background-color: lightslategrey;
+	border-radius: 50%;
+}
+
+.features_title {
+	display: block;
+    margin-top: 35%;
+    color: white;
+}
+
+.social-btns {
+	display: inline-block;
+	margin-left: 120px;
+	float: left;
+}
+
+.login-container td {
+	padding: 50px;
+}
+
+.social-btns button {
+	display: block;
+	margin-bottom: 10px;
+	height: 36px;
+	width: 100%;
+	padding: 0 32px;
+}
+
+.fb-btn {
+	background-color: #3b5998;
+	color: white; 
+}
+
+.google-btn {
+	background-color: #d34836;
+	color: white;
+}
+
+.twitter-btn {
+	background-color: #3B5998;
+	color: white; 
+}
+
+.signup_container {
+	display: inline-block;
+    margin-left: 14%;
+    margin-top: 50px;
+}
+
+.signup_btn {
+	width: 120px;
+    background: white;
+    color: #778899;
+    font-weight: 800;
+}
+
+.close_login {
+	position: absolute;
+	top: 70px;
+    right: 20px;
+    color: white;
+    font-size: 20px;
+}

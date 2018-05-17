@@ -1,0 +1,123 @@
+<script type = "text/javascript" src = "https://canvasjs.com/assets/script/canvasjs.min.js" >  </script>
+<div *ngFor="let item of this.listitem; let i = index" class="cards almostfull">
+  <div style="position: relative;width: 100%;height: 100%">
+	<section class="newcard-container">
+		<div class="row custom-row">
+	  		<div class= "col-sm-5 custom-container jumbotron">
+		        <div class="form-group input-container card-title" style="float: left;">
+			      <span>{{item.name}}</span>
+				</div>
+				<div class="card-btn-container">
+					<a id="confirmbtn-{{item.id}}" (click)="toggle_popup(item.id)" style="display: block; color: white;margin-right: 5px; color: red">x</a>
+					<a (click)="flip($event)" style="display: block; color: white;margin-right: 5px;">
+						<img id="flipbtn-{{i}}-{{item.id}}" width="22px" style="margin-top: 8px;" src="assets/analytics_icon.png"/>
+					</a>
+				</div>
+				<div id="confirmdelete-{{item.id}}" style="position: relative; z-index: 999;" [className]="popup[item.id]">
+					<span>Are you sure you want to delete this card?</span>
+					<button (click)="remove_card(item.id)">Yes</button>
+					<button (click)="toggle_popup(item.id)">No</button>
+				</div>
+	  		</div>
+		</div>
+		<div id="card" [className]="flip_class[i]">
+			<div id="figure" class="front">
+				<div [className]="my_class" style="float: left; width: 250px">  	
+			  		<ul class="task-row">
+			  			<li>
+			  				<form class="form-horizontal" #newtaskForm="ngForm" ngNativeValidate>
+			  					<div class="form-group input-container task-editor" style="background:#77889952; margin-bottom: 5px;">
+							      <!-- <label for="inputTitle">Title</label> -->
+							      <input type="text"
+							      	[(ngModel)] = "tasks[i].title"
+							        id="inputTitle-{{i}}-{{item.id}}"
+							        name="title"
+							        placeholder="Enter the name for the task"
+							        class="input-style" required/>
+								</div>
+								<div class="form-group input-container task-create-container">
+							        <button
+									   type="submit"
+									   class="btn btn-success res-button create-btn"
+									   id="category-{{i}}-{{item.id}}"
+									   (click)="create_task($event)"
+									   [disabled]="!newtaskForm.form.valid"> Create!
+									     
+									</button>
+								</div>
+			  				</form>
+			  			</li>
+			  		</ul>
+				  	<div *ngFor="let task of this.tasklist[i] | paginate: { itemsPerPage: 8, currentPage: p[i], id:item.id }"  class="row custom-row">
+						<ul class="task-row" id="taskcontent-{{i}}-{{task.id}}" (mouseover)="hideDelete($event)" (mouseout)="hideDelete($event)">
+				  			<li>
+				  				<form class="form-horizontal" #newtaskForm="ngForm" ngNativeValidate>
+				  					<div class="form-group input-container toggle-container">
+								        <button
+										   type="submit"
+										   [className]="toggle_row[i][task.id]"
+										   id="category-{{i}}-{{task.id}}-{{task.status}}"
+										   style="display: block;"
+										   (click)="toggle_task($event)">
+										</button>
+									</div>
+				  					<div class="form-group input-container task-editor">
+								      <!-- <label for="inputTitle">Title</label> -->
+								      <input type="text"
+								      	[(ngModel)] = "task.title"
+								        id="inputTitle-{{i}}-{{task.id}}-{{task.status}}"
+								        name="title" 
+								        value="{{task.title}}" 
+								        placeholder="Enter the name for the task"
+								        class="input-style" disabled/>
+									</div>
+									<div class="form-group input-container task-button">
+										<button
+										   type="submit"
+										   class="btn btn-success delete-btn hide_content"
+										   id="del-{{i}}-{{task.id}}-{{task.status}}"
+										   (click)="delete_task(task.id)">x
+										</button>
+									</div>
+				  				</form>
+				  			</li>
+				  		</ul>
+				  	</div>
+					<!-- <pagination-controls style="position: absolute; bottom: 0" (pageChange)="p = $event"></pagination-controls> -->
+					<div>
+						<pagination-controls id="{{item.id}}"
+						  style="position: absolute; left: 0; bottom: 0"
+	                      (pageChange)="p[i] = $event"
+	                      maxSize="4"
+	                      directionLinks="true"
+	                      previousLabel=""
+	                      nextLabel=""
+	                      screenReaderPaginationLabel="Pagination-{{i}}"
+	                      screenReaderPageLabel="page{{i}}"
+	                      screenReaderCurrentLabel="You're on page {{i}}">
+						</pagination-controls>
+					</div>
+				</div>
+			</div>
+			<div id="figure" class="back" style="background: white;">
+				<div [className]="my_class" style="float: left; width: 250px">
+				  	<div class="row custom-row" style="height: 100%">
+						<div id="graph-container-{{i}}" style="display: none">
+			                <!-- <canvas id="chart-{{item.id}}" baseChart width="200px" height="330px"
+			                        [datasets]="barChartData[item.id]"
+			                        [labels]="barChartLabels"
+			                        [colors]="colors"
+			                        [options]="barChartOptions"
+			                        [chartType]="barChartType"
+			                        (chartHover)="chartHovered($event)"
+			                        (chartClick)="chartClicked($event)"></canvas> -->
+			                    <div id = "chartContainer-{{item.id}}" style = "height: 300px; width: 100%;">
+			                	</div>
+			            </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+  </div>
+</div>
